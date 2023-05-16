@@ -58,6 +58,7 @@
     .text-days {
         font-size: 96px;
         font-weight: bold;
+        color: #ffae00;
         font-family: "Cabin Sketch", cursive;
     }
 

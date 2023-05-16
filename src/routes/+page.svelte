@@ -55,11 +55,9 @@
         margin: 20px;
         color: #11497b;
     }
-
     .text-days {
         font-size: 96px;
         font-weight: bold;
-        color: #ffae00;
         font-family: "Cabin Sketch", cursive;
     }
 

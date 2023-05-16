@@ -59,7 +59,7 @@
     .text-days {
         font-size: 96px;
         font-weight: bold;
-        color: #ffbf00;
+        color: #ffae00;
         font-family: "Cabin Sketch", cursive;
     }
 
@@ -99,9 +99,6 @@
         z-index: 0;
         transform-origin: 100% 0;
         transform: perspective(100vw) rotateY(-45deg);
-    }
-
-    .wall-right-logs {
     }
 
     .wall-bottom {

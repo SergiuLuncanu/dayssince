@@ -39,9 +39,7 @@
     <div class="walls">
         <div class="wall-left" />
         <div class="wall-right">
-            <div class="wall-right-logs">
-                <img src="/logs.png" alt="logs" />
-            </div>
+            <div class="wall-right-logs" />
         </div>
         <div class="wall-bottom" />
     </div>

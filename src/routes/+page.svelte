@@ -9,7 +9,7 @@
     }
 
     onMount(() => {
-        let lastPumpDiedOn = new Date("5/11/2021");
+        let lastPumpDiedOn = new Date("5/11/2023");
         let currentDate = new Date();
 
         diff = getDaysDifference(currentDate, lastPumpDiedOn);

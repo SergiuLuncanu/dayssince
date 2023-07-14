@@ -12,7 +12,23 @@
 
 <script>
     import { onMount } from "svelte";
+    import Pump from "../components/pump.svelte";
 
+    let pumps = [
+        {
+            pumpName: "Scala1",
+            killer: "Luci"
+        },
+        {
+            pumpName: "Scala2",
+            killer: "Luci"
+        },
+        {
+            pumpName: "Phonix Scala",
+            killer: "Luci or Darius"
+        }
+        
+    ]
     let diff = 0;
     
     function getDaysDifference(date1, date2){
@@ -21,7 +37,7 @@
     }
     
     onMount(() => {
-        let lastPumpDiedOn = new Date('5/11/2023')
+        let lastPumpDiedOn = new Date('7/13/2023')
         let currentDate = new Date()
         
         diff = getDaysDifference(currentDate, lastPumpDiedOn);
@@ -33,8 +49,14 @@
 <div class="container">
     <span class="text-title">Days since last pump died </span>
     <span class="text-days">{diff}</span>
+
 </div>
 
+<div class="container">
+    {#each pumps as pump}
+        <Pump {...pump}/>
+    {/each}
+</div>
 
 
 <style>
@@ -62,7 +84,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-top: 100px;
     margin: 0;
     font-family: 'Open Sans', sans-serif;

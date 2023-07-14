@@ -27,12 +27,21 @@
     <title>Days Since Last Pump Died</title>
 </svelte:head>
 
-<div class="chalkboard-region">
-    <div class="chalkboard-pin" />
-    <div class="chalkboard-hanger" />
-    <div class="chalkboard">
-        <span class="text-title">Days since last pump died </span>
-        <span class="text-days">{diff}</span>
+<div class="room">
+    <div class="whiteboard-region">
+        <div class="whiteboard-pin" />
+        <div class="whiteboard-hanger" />
+        <div class="whiteboard">
+            <span class="text-title">Days since last pump died </span>
+            <span class="text-days">{diff}</span>
+        </div>
+    </div>
+    <div class="walls">
+        <div class="wall-left" />
+        <div class="wall-right">
+            <div class="wall-right-logs" />
+        </div>
+        <div class="wall-bottom" />
     </div>
 </div>
 
@@ -40,14 +49,14 @@
     .text-title {
         font-size: 64px;
         text-align: center;
+        font-weight: bold;
         margin: 20px;
-        color: #ffffff;
+        color: #11497b;
     }
-
     .text-days {
         font-size: 96px;
         font-weight: bold;
-        color: #ffbf00;
+        color: #ffae00;
         font-family: "Cabin Sketch", cursive;
     }
 
@@ -57,24 +66,66 @@
         justify-content: center;
     }
 
-    .chalkboard-region {
+    .walls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #165d9c;
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+    }
+
+    .wall-left {
+        position: absolute;
+        background-color: #11497b;
+        height: 100vh;
+        width: 50vw;
+        z-index: 0;
+        transform-origin: 0 0;
+        transform: perspective(100vw) rotateY(45deg);
+    }
+
+    .wall-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #11497b;
+        height: 100vh;
+        width: 50vw;
+        z-index: 0;
+        transform-origin: 100% 0;
+        transform: perspective(100vw) rotateY(-45deg);
+    }
+
+    .wall-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #8b6534;
+        height: 78vh;
+        width: 100vw;
+        z-index: 0;
+        transform-origin: 50% 100%;
+        transform: perspective(50vh) rotateX(45deg);
+    }
+    .whiteboard-region {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: min-content;
-        /* outline: red solid 1px; */
     }
 
-    .chalkboard-pin {
+    .whiteboard-pin {
         position: absolute;
         background-color: #ffbf00;
         border-radius: 50%;
         height: 16px;
         width: 16px;
-        z-index: 1;
+        z-index: 3;
     }
 
-    .chalkboard-hanger {
+    .whiteboard-hanger {
         position: absolute;
         border: 3px solid;
         border-color: grey transparent transparent grey;
@@ -83,12 +134,12 @@
         transform: rotateZ(45deg) translate(15%, 15%);
     }
 
-    .chalkboard {
-        background-color: black;
-        border: solid 10px;
-        border-color: #964b00 #6d3700 #482400 #7c3e00;
-        max-width: 32em;
-        max-height: 28em;
+    .whiteboard {
+        background-color: white;
+        border: solid 8px;
+        border-color: #9b9b9b #5f5f5f #3b3b3b #5f5f5f;
+        width: 45vw;
+        min-height: 45vh;
         margin-top: 106px;
         display: flex;
         flex-direction: column;
